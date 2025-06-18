@@ -1,0 +1,29 @@
+﻿@page
+@model WebAppCoreRazorPages.Pages.DivModel
+@{
+}
+<form method="post">
+
+    <table>
+        <tr>
+            <th>Enter x</th>
+            <td>
+                <input type="number" name="x" />
+            </td>
+        </tr>
+        <tr>
+            <th>Enter y</th>
+            <td>
+                <input type="number" name="y" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" name="submit" value="submit" />
+            </td>
+            <td>
+                @TempData["res"]
+            </td>
+        </tr>
+    </table>
+</form>
