@@ -1,0 +1,51 @@
+﻿@page
+@model WebAppCoreRazorPages.Pages.DisplayBooksModel
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap 5 Table</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container my-4">
+        <h2 class="mb-4">Books List</h2>
+        <h3>
+                        <a href="/Books" class="btn btn-primary float-end">Add Books</a>
+        </h3>
+        <table class="table table-striped table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Book Name</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.displaybooks)
+                {
+                    <tr>
+                        <th scope="row">@item.ID</th>
+                        <td>@item.BookName</td>
+                        <td>@item.Author</td>
+                        <td>@item.Qty</td>
+                        <td>@item.Status</td>
+                    </tr> 
+                }
+               
+               
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle with Popper (optional for some components) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
