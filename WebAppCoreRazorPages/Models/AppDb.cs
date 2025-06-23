@@ -18,5 +18,9 @@ namespace WebAppCoreRazorPages.Models
         public DbSet<UsersData> usersData { get; set; }
 
         public DbSet<Book> books { get; set; }
+
+        public DbSet<Anno> annos { get; set; }  
+
+        public DbSet<AllAnnotationExample> allAnnotationExamples { get; set; }  
     }
 }
