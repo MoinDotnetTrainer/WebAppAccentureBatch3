@@ -1,0 +1,145 @@
+﻿@page
+@model WebAppCoreRazorPages.Pages.EditModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-header text-center">
+                        <h4>Edit User</h4>
+                        <h3>
+                            <a asp-page="/Display" class="btn btn-primary float-end">List</a>
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <div class="mb-3">
+
+                                <input type="hidden" asp-for="_Ex.ID" />
+                                <label for="fullname" class="form-label" asp-for="_Ex.FirstName"></label>
+                                <input type="text" class="form-control" placeholder="Enter FirstName" asp-for="_Ex.FirstName">
+                                <span asp-validation-for="_Ex.FirstName"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="fullname" class="form-label" asp-for="_Ex.LastName"></label>
+                                <input type="text" class="form-control" placeholder="Enter LastName" asp-for="_Ex.LastName">
+                                <span asp-validation-for="_Ex.LastName"></span>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label" asp-for="_Ex.Email">  </label>
+                                <input type="email" class="form-control" placeholder="Enter your email" asp-for="_Ex.Email">
+                                <span asp-validation-for="_Ex.Email"></span>
+                            </div>
+
+
+
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input class="form-control" placeholder="Enter a password" asp-for="_Ex.Password">
+                                <span asp-validation-for="_Ex.Password"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Confirm Password</label>
+                                <input class="form-control" placeholder="Enter a Confirm password" asp-for="_Ex.ConfirmPassword">
+                                <span asp-validation-for="_Ex.ConfirmPassword"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="dob" class="form-label">Dob</label>
+                                <input type="datetime-local" class="form-control" placeholder="Enter a Dob" asp-for="_Ex.Dob">
+
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="Age" class="form-label">Age</label>
+                                <input type="number" class="form-control" placeholder="Enter  Age" asp-for="_Ex.Age">
+                                <span asp-validation-for="_Ex.Age"></span>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="mobile" class="form-label">Mobile</label>
+                                <input type="text" class="form-control" placeholder="Enter a Mobile" asp-for="_Ex.Mobile">
+                                <span asp-validation-for="_Ex.Mobile"></span>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="gender" class="form-label">Gender</label>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" value="Male" id="gendermale" asp-for="_Ex.Gender" />
+                                    <label class="form-label">Male</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" value="Female" id="genderfemale" asp-for="_Ex.Gender" />
+                                    <label class="form-label">Female</label>
+                                </div>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="dept" class="form-label">Dept</label>
+                                <select class="form-control" asp-for="_Ex.Dept">
+                                    <option value="NA">--Select--</option>
+                                    <option value="IT">IT</option>
+                                    <option value="Sales">Sales</option>
+                                    <option value="HR">HR</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="text" class="form-label">Address</label>
+                                <input type="text" class="form-control" placeholder="Enter a Address" asp-for="_Ex.Address">
+                                <span asp-validation-for="_Ex.Address"></span>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="dept" class="form-label">Status</label>
+                                <select class="form-control" asp-for="_Ex.Status">
+                                    <option value="NA">--Select--</option>
+                                    <option value="true">Active</option>
+                                    <option value="false">InActive</option>
+
+                                </select>
+                            </div>
+
+                            <input type="submit" value="submit" name="submit" class="btn btn-primary w-100" />
+
+                            <div class="mb-3">
+                                @TempData["res"]
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts
+    {
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

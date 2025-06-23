@@ -12,6 +12,8 @@ namespace WebAppCoreRazorPages.Models
     public class AllAnnotationExample
     {
         [Key]
+     
+        
         public int ID { get; set; }  // cluster
 
         [Required(ErrorMessage = "First Name Required")]

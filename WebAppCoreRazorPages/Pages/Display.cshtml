@@ -26,6 +26,7 @@
                     <th scope="col">LastName</th>
                     <th scope="col">Email</th>
                     <th scope="col">Status</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,6 +38,10 @@
                         <td>@item.LastName</td>
                         <td>@item.Email</td>
                         <td>@item.Status</td>
+                        <td>
+                            <a href="/Edit?Id=@item.ID">Update</a>|
+                            <a href="/Delete?Id=@item.ID">Delete</a>
+                        </td>
                     </tr>
                 }
             </tbody>

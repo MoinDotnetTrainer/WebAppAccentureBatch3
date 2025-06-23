@@ -28,6 +28,12 @@ namespace WebAppCoreRazorPages
 
             app.MapRazorPages();
 
+            app.MapGet("/", context =>
+            {
+                context.Response.Redirect("Display");
+                return Task.CompletedTask;
+            });
+
             app.Run();
         }
     }
